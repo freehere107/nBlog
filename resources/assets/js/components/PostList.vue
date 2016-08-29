@@ -26,7 +26,14 @@
 <script>
     export default {
         ready() {
-            console.log('Component ready.')
+            console.log('post list ready.');
+            this.$http.get('api/home', {foo: 'bar'}).then((response) => {
+                response.status;
+                this.$set('someData', response.json());
+                console.log(response.json());
+            }, (response) => {
+                console.log('error');
+            });
         }
     }
 </script>
