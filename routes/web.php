@@ -1,11 +1,12 @@
 <?php
+
 Route::get('/', function () {
-    return view('blog');
-})->name('home');;
+    return view('blog.index');
+})->name('blog');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index');//个人主页
+});
 
-//Route::resource('user','UserController');
-Route::resource('photos', 'PhotoController');

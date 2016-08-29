@@ -20,19 +20,19 @@
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
+                            一个技术博客
                         </h2>
                         <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
+                            一个技术博客一个技术博客一个技术博客一个技术博客一个技术博客一个技术博客
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                    <p class="post-meta">Posted by <a href="#">Sun</a> on Oct 29, 2016</p>
                 </div>
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
+                        <a href="#">查看更多 &rarr;</a>
                     </li>
                 </ul>
             </div>
