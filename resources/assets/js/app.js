@@ -14,6 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('post', require('./components/PostList.vue'));
 
 const app = new Vue({
     el: 'body'

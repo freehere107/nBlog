@@ -15,9 +15,12 @@ class CreatePostTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('title');
             $table->text('content');
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 
@@ -28,6 +31,6 @@ class CreatePostTable extends Migration
      */
     public function down()
     {
-        Schema::drop('flights');
+        Schema::drop('posts');
     }
 }
