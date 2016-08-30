@@ -6,6 +6,7 @@ use App\Model\Post;
 use App\Model\User;
 use Illuminate\Http\Request;
 use Auth;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class PostController extends ApiBaseController
 {
@@ -18,20 +19,22 @@ class PostController extends ApiBaseController
             $list = $list->take(10);
         }
         $list = $list->get();
+        foreach ($list as $k => $v) {
+            $list[$k]['content'] = Markdown::convertToHtml($v['content']);
+        }
         return response()->json($list);
     }
 
 
-    public function publishContent(Request $request)
+    public function publish(Request $request)
     {
         $userID = trim($request->input('userID'));
         $content = trim($request->input('content'));
         $title = trim($request->input('title'));
-        if (empty($userID) && Auth::check()) {
+        $user = $this->currentUser;
+        if (empty($user)) {
             return response()->json(['errorCode' => -1]);
         } else {
-            $userID = (empty($userID)) ? Auth::id() : $userID;
-            $user = User::find($userID);
             $post = new Post([
                 'title' => $title,
                 'content' => $content

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //})->middleware('auth:api');
 
-Route::group(['namespace' => 'Api','middleware' => 'checkParam'], function () {
+Route::group(['namespace' => 'Api', 'middleware' => ['checkParam']], function () {
     Route::get('/home', 'PostController@list');
-    Route::post('/publish', 'PostController@publishContent');
+    Route::post('/publish', 'PostController@publish');
 });

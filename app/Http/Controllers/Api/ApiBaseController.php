@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Model\User;
+use Auth;
 
 class ApiBaseController extends BaseController
 {
@@ -18,6 +19,6 @@ class ApiBaseController extends BaseController
 
     protected function getCurrentUser($userId)
     {
-        return empty($userId) ? [] : User::find($userId);
+        return empty($userId) ? Auth::user() : User::find($userId);
     }
 }

@@ -31,7 +31,7 @@
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <script>
         var option = {
-            autoDownloadFontAwesome:true,
+            //autoDownloadFontAwesome: true,
             autofocus: true,
             placeholder: "从这里开始输入...",
             autosave: {
@@ -44,11 +44,11 @@
             status: ["autosave", "words"] // Optional usage
         };
         var simplemde = new SimpleMDE(option);
-
         $('.publish-button').on('click', function () {
             var content = simplemde.value();
-            $.post('',{},function () {
-
+            var title = $('.publish-title').val();
+            $.post('{{url('/')}}/api/publish', {'content': content, 'title': title, 'userID':{{ $userID }} }, function (data) {
+                console.log(data)
             })
         });
     </script>

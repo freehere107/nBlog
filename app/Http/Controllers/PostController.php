@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Post;
 use Illuminate\Http\Request;
 use App\Model\User;
+use Auth;
 
 class PostController extends Controller
 {
@@ -16,6 +17,6 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('blog.create');
+        return view('blog.create')->with('userID', Auth::getUser()->id);
     }
 }

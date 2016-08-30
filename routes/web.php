@@ -6,10 +6,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('post', 'PostController');
-
-
 Route::group(['middleware' => 'auth'], function () {
+    Route::resource('post', 'PostController');
     Route::get('/home', 'HomeController@index')->name('home');//个人主页
 });
 
