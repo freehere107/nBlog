@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "predis/predis": "^1.1",
         "pusher/pusher-php-server": "^2.6",
-        "barryvdh/laravel-ide-helper": "^2.2"
+        "barryvdh/laravel-ide-helper": "^2.2",
+        "graham-campbell/markdown": "^6.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

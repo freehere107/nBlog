@@ -1,36 +1,30 @@
 <template>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        一个技术博客
-                    </h2>
-                    <h3 class="post-subtitle">
-                        一个技术博客一个技术博客一个技术博客一个技术博客一个技术博客一个技术博客
-                    </h3>
-                </a>
-                <p class="post-meta">Posted by <a href="#">Sun</a> on Oct 29, 2016</p>
-            </div>
-            <hr>
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">查看更多 &rarr;</a>
-                </li>
-            </ul>
-        </div>
+    <div class="post-preview" v-for="item in items">
+        <a href="javascript:void(0)">
+            <h2 class="post-title">
+                {{item.title}}
+            </h2>
+            <h3 class="post-subtitle">
+                {{item.content}}
+            </h3>
+        </a>
+        <p class="post-meta">Posted by <a href="#">Sun</a> on {{item.created_at}}</p>
     </div>
+    <hr>
 </template>
 
 <script>
-    export default {
+    module.exports = {
+        data :function(){
+            return {
+                items: []
+            }
+        },
         ready() {
             console.log('post list ready.');
-            this.$http.get('api/home', {foo: 'bar'}).then((response) => {
+            this.$http.get('api/home', {type: 'home'}).then((response) => {
                 response.status;
-                this.$set('someData', response.json());
-                console.log(response.json());
+                this.$set('items', response.data);
             }, (response) => {
                 console.log('error');
             });
