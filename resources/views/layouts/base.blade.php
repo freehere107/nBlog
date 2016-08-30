@@ -26,10 +26,10 @@
 @include('widgets.main-nav')
 @section('body')
 @show
-@section('afterBody')
-@show
 @include('widgets.main-footer')
 <script src="{{asset('/')}}/js/app.js"></script>
 <script src="{{asset('/')}}js/clean-blog.js"></script>
+@section('afterBody')
+@show
 </body>
 </html>

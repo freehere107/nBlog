@@ -13,4 +13,9 @@ class PostController extends Controller
         $posts = Post::all();
         print_r($posts);
     }
+
+    public function create()
+    {
+        return view('blog.create');
+    }
 }
