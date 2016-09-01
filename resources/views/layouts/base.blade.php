@@ -8,8 +8,8 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>My Blog</title>
-    <link href="{{asset('/')}}/css/app.css" rel="stylesheet">
-    <link href="{{asset('/')}}/css/clean-blog.css" rel="stylesheet">
+    <link href="{{asset('/')}}css/app.css" rel="stylesheet">
+    <link href="{{asset('/')}}css/clean-blog.css" rel="stylesheet">
     <script>
         window.Laravel = { csrfToken: '{{ csrf_token() }}' };
     </script>
@@ -27,7 +27,7 @@
 @section('body')
 @show
 @include('widgets.main-footer')
-<script src="{{asset('/')}}/js/app.js"></script>
+<script src="{{asset('/')}}js/app.js"></script>
 <script src="{{asset('/')}}js/clean-blog.js"></script>
 @section('afterBody')
 @show
