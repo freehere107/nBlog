@@ -1,6 +1,6 @@
 <template>
     <div class="post-preview" v-for="item in items">
-        <a href="javascript:void(0)">
+        <a v-bind:href="item.id|ensureUrl">
             <h2 class="post-title">
                 {{item.title}}
             </h2>
@@ -11,10 +11,14 @@
 </template>
 
 <script>
+    Vue.filter('ensureUrl', function (value) {
+        return 'post/'+value;
+    });
     module.exports = {
         data :function(){
             return {
-                items: []
+                items: [],
+                url:''
             }
         },
         ready() {
