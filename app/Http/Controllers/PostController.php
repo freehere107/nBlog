@@ -18,8 +18,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
-        print_r($posts);
+        return view('blog.all');
     }
 
     public function create()
