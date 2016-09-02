@@ -14,11 +14,10 @@ class PostController extends ApiBaseController
     public function list(Request $request)
     {
         $type = trim($request->input('type'));
-        $list = Post::where('status', 1)->orderBy('id', 'desc');
+        $list = Post::where('status', 1)->orderBy('id', 'desc')->paginate(15);
         if ($type != 'all') {
             $list = $list->take(10);
         }
-        $list = $list->get();
         foreach ($list as $k => $v) {
             $list[$k]['content'] = Markdown::convertToHtml($v['content']);
         }

@@ -23,12 +23,8 @@
         },
         ready() {
             console.log('post list ready.');
-            this.$http.get('api/home?type=home').then((response) => {
-                response.status;
-                this.$set('items', response.data);
-            }, (response) => {
-                console.log('error');
-            });
+            this.$http.get('api/home?type=home').then((response) => {response.status;this.$set('items', response.data);},
+            (response) => {console.log('error');});
         }
     }
 </script>

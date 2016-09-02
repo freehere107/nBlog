@@ -13,9 +13,9 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
 Vue.component('post', require('./components/PostList.vue'));
-
+Vue.component('all', require('./components/AllPosts.vue'));
+Vue.config.devtools = true;
 const app = new Vue({
     el: 'body'
 });
