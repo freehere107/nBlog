@@ -18,7 +18,7 @@
 Clone this project to your env
 
 ```shell
-$git clone https://github.com/freehere107/nsite
+$git clone https://github.com/freehere107/nBlog
 ```
 **Composer**
 
