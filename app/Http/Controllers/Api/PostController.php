@@ -14,7 +14,7 @@ class PostController extends ApiBaseController
     public function list(Request $request)
     {
         $type = trim($request->input('type'));
-        $list = Post::where('status', 1)->orderBy('id', 'desc')->paginate(15);
+        $list = Post::where('status', 1)->orderBy('id', 'desc')->paginate(5);
         if ($type != 'all') {
             $list = $list->take(10);
         }
