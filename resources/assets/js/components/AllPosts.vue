@@ -1,4 +1,4 @@
-<template >
+<template>
     <div class="post-preview" v-for="item in items">
         <a v-bind:href="item.id|ensureUrl">
             <h2 class="post-title">
@@ -8,7 +8,9 @@
         <p class="post-meta">Posted by <a href="#">Sun</a> on {{item.created_at}}</p>
     </div>
     <hr>
-    <pagination :pagination="pagination" :callback="loadData" :offset="3"></pagination>
+    <ul class="pagination">
+        <li class="page-item" v-on:click="getItem(n+1)" v-for="n in pagination.total_page"><span class="page-link">{{n+1}}</span></li>
+    </ul>
 </template>
 
 <script>
@@ -19,27 +21,22 @@
         data: function () {
             return {
                 items: [],
-                url: '',
                 pagination: {
-                    total: 0, per_page: 12,
-                    from: 1, to: 0,
-                    current_page: 1
-                },
-                loadData:function(){
+                    total_page:0
                 }
             }
         },
         ready() {
             console.log('post list ready.');
-            this.$http.get('api/home?type=all').then((response) => {response.status;this.$set('items', response.data.data);},
-            (response) => {console.log('error');});
+            this.getItem(1);
         },
-        method:{
-            'loadData':function() {
-                let data = {
-                    paginate: this.pagination.per_page,
-                    page: this.pagination.current_page
-                };
+        methods:{
+            getItem:function(page){
+                this.$http.get('api/home?type=all&page='+page).then((response) => {
+                    response.status;
+                this.$set('items', response.data.data);
+                this.$set('pagination.total_page', response.data.last_page);},
+                (response) => {console.log('error');});
             }
         },
         components: {

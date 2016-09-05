@@ -16,9 +16,6 @@
                     <a href="{{route('post.create')}}">Post</a>
                 </li>
                 <li>
-                    <a href="{{route('blog')}}">Sample Post</a>
-                </li>
-                <li>
                     @if (Auth::guest())
                         <a href="{{route('login')}}">Login</a>
                     @else
