@@ -1,6 +1,6 @@
 <template>
     <div class="post-preview" v-for="item in items">
-        <a v-bind:href="item.id|ensureUrl">
+        <a v-bind:href="item.slug|ensureUrl">
             <h2 class="post-title">
                 {{item.title}}
             </h2>

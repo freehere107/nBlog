@@ -29,7 +29,7 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $post = Post::find($id);
+        $post = Post::findBySlug($id);
         $post['content'] = Markdown::convertToHtml($post['content']);
         return view('blog.show')->with('post', $post);
     }
