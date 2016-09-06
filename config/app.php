@@ -183,8 +183,11 @@ return [
          * new
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        'GrahamCampbell\Markdown\MarkdownServiceProvider'
-
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        'GrahamCampbell\Markdown\MarkdownServiceProvider',
+        'Jenssegers\Date\DateServiceProvider',
     ],
 
     /*
@@ -231,7 +234,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown'
+        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Date' => Jenssegers\Date\Date::class,
     ],
 
 ];

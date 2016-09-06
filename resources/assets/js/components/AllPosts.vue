@@ -1,6 +1,6 @@
 <template>
     <div class="post-preview" v-for="item in items">
-        <a v-bind:href="item.id|ensureUrl">
+        <a v-bind:href="item.slug|ensureUrl">
             <h2 class="post-title">
                 {{item.title}}
             </h2>
@@ -9,7 +9,7 @@
     </div>
     <hr>
     <ul class="pagination">
-        <li class="page-item" v-on:click="getItem(n+1)" v-for="n in pagination.total_page"><span class="page-link">{{n+1}}</span></li>
+        <li class="page-item" v-on:click="getItem(n+1)" v-for="n in pagination.total_page" v-if="pagination.total_page>1"><span class="page-link">{{n+1}}</span></li>
     </ul>
 </template>
 
