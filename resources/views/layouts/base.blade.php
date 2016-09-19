@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>My Blog</title>
     <link href="{{asset('/')}}css/app.css" rel="stylesheet">
-    <link href="{{asset('/')}}css/clean-blog.css" rel="stylesheet">
+    <link href="{{asset('/')}}css/all.css" rel="stylesheet">
     <script>
         window.Laravel = { csrfToken: '{{ csrf_token() }}' };
     </script>
