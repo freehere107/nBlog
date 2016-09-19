@@ -186,6 +186,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Elasticquent\ElasticquentServiceProvider::class,
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'Jenssegers\Date\DateServiceProvider',
     ],
@@ -237,6 +238,7 @@ return [
         'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Date' => Jenssegers\Date\Date::class,
+        'Es' => Elasticquent\ElasticquentElasticsearchFacade::class,
     ],
 
 ];

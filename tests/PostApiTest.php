@@ -15,7 +15,7 @@ class PostApiTest extends TestCase
     {
         $this->json('GET', '/api/home', ['type' => 'all'])
             ->seeJsonStructure([
-                'current_page', 'from', 'last_page', 'next_page_url', 'per_page', 'to', 'total', 'prev_page_url',
+                 'from', 'last_page', 'next_page_url', 'per_page', 'to', 'total', 'prev_page_url',
 
                 'data' => [
                     '*' => ['id', 'title', 'content', 'created_at', 'updated_at', 'status', 'user_id']
