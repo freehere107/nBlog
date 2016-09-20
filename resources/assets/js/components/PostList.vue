@@ -23,7 +23,17 @@
         },
         ready() {
             console.log('post list ready.');
-            this.$http.get('api/home?type=home').then((response) => {response.status;this.$set('items', response.data);},
+            this.$http.get('api/home?type=home',
+                    { before(request) {
+                        console.log(request);
+                        }
+                    }
+            )
+            .then((response) => {
+                $('.ajax-loading').hide();
+                $('.post-list').show();
+                response.status;this.$set('items', response.data);
+            },
             (response) => {console.log('error');});
         }
     }

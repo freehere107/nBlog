@@ -14,7 +14,8 @@
         </div>
     </header>
     <div class="container">
-        <div class="row">
+        @include('vendor.loading')
+        <div class="row post-list" hidden>
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <all></all>
             </div>
