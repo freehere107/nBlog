@@ -14,7 +14,8 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "cviebrock/eloquent-sluggable": "^4.0",
         "jenssegers/date": "^3.2",
-        "rap2hpoutre/laravel-log-viewer": "dev-master"
+        "rap2hpoutre/laravel-log-viewer": "dev-master",
+        "elasticquent/elasticquent": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
