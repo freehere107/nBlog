@@ -34,6 +34,8 @@
             getItem:function(page){
                 this.$http.get('api/home?type=all&page='+page).then((response) => {
                     response.status;
+                $('.ajax-loading').hide();
+                $('.post-list').show();
                 this.$set('items', response.data.data);
                 this.$set('pagination.total_page', response.data.last_page);},
                 (response) => {console.log('error');});

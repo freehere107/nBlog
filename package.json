@@ -16,6 +16,7 @@
     "vue-resource": "^0.9.3"
   },
   "dependencies": {
+    "spinkit": "^1.2.5",
     "vue-bootstrap-pagination": "^1.11.0",
     "vue-loading-bar": "^1.0.0",
     "vue-paginate": "^2.1.1"
