@@ -15,6 +15,7 @@ class AddPostSlug extends Migration
     {
         Schema::table('posts', function ($table) {
             $table->string('slug');
+            $table->integer('status')->default(0);
             $table->index('slug');
         });
     }
